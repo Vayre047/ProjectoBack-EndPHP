@@ -135,7 +135,30 @@
             echo "<p>Esgotado</p>";
         }
     }
-?> 
+?>
+
+        <div class="text-center">           
+            <h2 class="subtitlesStyle h1 pt-2">Categorias:</h2>
+<?php
+    $categoryCol = 4;
+    $categoryRow = 0;
+    $widthCategoryCol = 12 / $categoryCol;
+
+    foreach($categories as $category){
+        if($categoryRow % $categoryCol == 0) { ?> <div class="row"> <?php } 
+            $categoryRow++;
+?>
+            <div class="ps-5 pt-5 pb-5 col-md-<?php echo $widthCategoryCol ?>">
+                <div class="row pt-3"> 
+                    <figure class="mainCategories ps-5 col-md-4">
+                        <img class="ps-5" src="<?php echo ROOT . "/Images/" . $category["category_image"]; ?>">
+                    </figure>
+                </div>
+            </div>
+<?php
+    if($categoryRow % $categoryCol == 0) { ?> </div> <?php } }
+?>
+        </div>
     </main>
 <?php
     require_once("Layout/footer.php");
