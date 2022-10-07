@@ -1,65 +1,7 @@
 <?php
     require_once("Layout/header.php");
 ?>
-<header>
-     <div class="grid-container">
-             <div class="sm-box sm-box--1">
-                
-            </div>
-            <div class="sm-box sm-box--2 positionConfiguration">
-                <ul class="primaryConfiguration">
-                    <?php echo '<a href="' .ROOT. '/listproducts">
-                        <button type="button" class="navbarButton">Productos</button>
-                    </a>' ?>
-                    <ul class="navbarList">
-    <?php
-        foreach($products as $product){
-            echo '<li class="listConfiguration fst-italic"><a class="linkConfiguration fst-italic" href="' .ROOT. '/productdetails/' .$product["product_id"] . '">' . $product["product_name"] .'</a></li>';
-        }
-    ?>
-                    </ul>
-                </ul>
-            </div>
-            <div class="sm-box sm-box--3 positionConfiguration">
-                <ul class="primaryConfiguration">
-                    <button type="button" class="navbarButton">Categorias</button>
-                    <ul class="navbarList">
-    <?php
-        foreach($categories as $category){
-            echo '<li class="listConfiguration fst-italic"><a class="linkConfiguration fst-italic" href="' .ROOT. '/category/' .$category["category_id"] . '">' . $category["category_name"] .'</a></li>';
-        }
-    ?>
-                    </ul>
-                </ul>
-            </div>
-            <div class="sm-box sm-box--4 positionConfiguration">
-                <ul class="primaryConfiguration">
-                    <button type="button" class="navbarButton">
-                        Estações
-                    </button>
-                    <ul class="navbarList">
-    <?php
-        foreach($seasons as $season){
-            echo '<li class="listConfiguration"><a class="linkConfiguration" href="' .ROOT. '/season/' .$season["season_id"] . '">' . $season["season_name"] . '</a></li>';
-        }
-    ?>
-                        </ul>
-                    </ul>
-            </div>
-            <div class="sm-box sm-box--5">
-                
-            </div>
-            <div class="pt-2 sm-box sm-box--6">
-                
-            </div>
-            <div class="pt-2 sm-box sm-box--7">
-                
-            </div>
-            <div class="sm-box sm-box--8">
-                
-            </div>
-        </div>
-    </header>
+    
     <main class="pb-5">
         <div class="text-center pb-5">
             <h2 class="subtitlesStyle h1">Productos da Época: <?php echo $season["season_name"]; ?></h2>
@@ -123,7 +65,8 @@
                     </form>
                   </div>
                 </div>
-        <?php
+                
+<?php
     
     if(intval($seasonProduct["stock"])>0){
 
@@ -135,8 +78,8 @@
             echo "<p>Esgotado</p>";
         }
     }
-?>
-
+?>  
+        </div>
         <div class="text-center">           
             <h2 class="subtitlesStyle h1 pt-2">Categorias:</h2>
 <?php
@@ -159,7 +102,45 @@
     if($categoryRow % $categoryCol == 0) { ?> </div> <?php } }
 ?>
         </div>
+        <div>
+            <h2 class="subtitlesStyle h1 text-center pt-3">Produtos:</h2>
+<?php
+
+    $randProductsCol = 3;
+    $randProductsRow = 0;
+    $widthCol = 12 / $randProductsCol;
+
+    foreach($randProducts as $randProduct){
+        if($randProductsRow % $randProductsCol == 0) { ?> <div class="row"> <?php } 
+    $randProductsRow++; 
+?>
+        <div class="col-md-<?php echo $widthCol; ?>">
+            <div class="card row bg-transparent text-center mainCategories">
+                <div class="card-body w-25 dispositionItems pt-3 pb-3">
+                    <h3 class="card-title"><?php echo $randProduct["product_name"] ?></h3>
+                </div>
+                <div class="productImagePosition">
+                    <a href="<?php echo ROOT . '/productdetails/' . $randProduct["product_id"]; ?>">
+                        <img class="card-image" src="<?php echo ROOT . "/Images/" . $randProduct["product_image"] ?>">
+                    </a>
+                </div>
+                <div class="card-body w-25 dispositionItems pt-3 pb-1">
+                    <p><?php echo $randProduct["product_price"] ?>€/kg</p>
+                </div>
+                <div class="pb-3">
+                    <button class="btn btn-success" type="button">
+                        <a class="" href="<?php echo ROOT . "/productdetails/" . $randProduct["product_id"] ?>">Detalhes
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+<?php
+    if($randProductsRow % $randProductsCol == 0) { ?> </div> <?php } }
+?>
+        </div>
     </main>
+    
 <?php
     require_once("Layout/footer.php");
 ?>

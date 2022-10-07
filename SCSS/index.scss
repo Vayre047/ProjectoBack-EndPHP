@@ -3,75 +3,75 @@ body {
 }
 
 .grid-container {
-    margin: 20px auto;
-    display: grid;
-    grid-template-rows: 100px 1fr 2fr 100px;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 2.5fr 1fr 1fr 0.5fr;
-    grid-gap: 2px;
-    color: #fff;
-    font-family: sans-serif;
-
-    &>* {
-        padding: 10px;
-    }
+  margin: 20px auto;
+  display: grid;
+  grid-template-rows: 100px 1fr 2fr 100px;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 2.5fr 1fr 1fr 0.5fr;
+  grid-gap: 2px; 
+  color: #fff;
+  font-family: sans-serif;
+  
+  & > * {
+    padding: 10px;
+  }
 }
 
 .sm-box {
-    min-height: 100px;
+  min-height: 100px;
+  
+  &--1 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+  
+  &--2 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+  
+  &--3 {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+  }
 
-    &--1 {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-    }
+  &--4 {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+  }
 
-    &--2 {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-    }
+  &--5 {
+    grid-row: 2 / 3;
+    grid-column: 5 / 6;
+  }
+  
+  &--6 {
+    grid-row: 2 / 3;
+    grid-column: 6 / 7;
+  }
 
-    &--3 {
-        grid-row: 2 / 3;
-        grid-column: 3 / 4;
-    }
+  &--7 {
+    grid-row: 2 / 3;
+    grid-column: 7 / 8;
+  }
 
-    &--4 {
-        grid-row: 2 / 3;
-        grid-column: 4 / 5;
-    }
-
-    &--5 {
-        grid-row: 2 / 3;
-        grid-column: 5 / 6;
-    }
-
-    &--6 {
-        grid-row: 2 / 3;
-        grid-column: 6 / 7;
-    }
-
-    &--7 {
-        grid-row: 2 / 3;
-        grid-column: 7 / 8;
-    }
-
-    &--8 {
-        grid-row: 2 / 3;
-        grid-column: 8 / 9;
-    }
+  &--8 {
+    grid-row: 2 / 3;
+    grid-column: 8 / 9;
+  }
 }
 
 .grid-container-header {
-    margin: 20px auto;
-    display: grid;
-    grid-template-rows: 100px 1fr 2fr 100px;
-    grid-template-columns: 3.5fr 2.5fr 1fr 1fr 0.5fr;
-    grid-gap: 2px;
-    color: #fff;
-    font-family: sans-serif;
-
-    &>* {
-        padding: 10px;
-    }
+  margin: 20px auto;
+  display: grid;
+  grid-template-rows: 100px 1fr 2fr 100px;
+  grid-template-columns: 3.5fr 2.5fr 1fr 1fr 0.5fr;
+  grid-gap: 2px; 
+  color: #fff;
+  font-family: sans-serif;
+  
+  & > * {
+    padding: 10px;
+  }
 }
 
 .sm-box-header--1 {
@@ -94,13 +94,13 @@ body {
     grid-column: 8 / 9;
 }
 
-.positionConfiguration {
+.positionConfiguration{
     position: relative;
     bottom: 225%;
-    padding: 0 0 0 35%;
+    padding: 0 0 0 35%; 
 }
 
-.mainTitle {
+.mainTitle{
     color: #a52a2a;
     font-family: 'Dancing Script', cursive;
     text-align: center;
@@ -116,10 +116,10 @@ body {
 }
 
 .linkConfiguration {
-    text-decoration: none;
+   text-decoration: none;
 }
 
-.primaryConfiguration .navbarButton {
+.primaryConfiguration .navbarButton{
     font-size: 16px;
     border: none;
     outline: none;
@@ -155,12 +155,12 @@ body {
     display: block;
 }
 
-.mainLink {
+.mainLink{
     text-decoration: none;
     color: #a52a2a;
 }
 
-.inputConfiguration {
+.inputConfiguration{
     background-color: #e6ffe6;
     border: none;
     min-width: 200px;
@@ -170,60 +170,72 @@ body {
     border-radius: 2%;
 }
 
-.formInputs {
+.formInputs{
     font-family: 'Edu TAS Beginner', cursive;
     border: transparent;
     height: 8%;
 }
 
-.formConfiguration {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.formConfiguration{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.subtitlesStyle {
+.subtitlesStyle{
     font-family: 'Barlow Condensed', sans-serif;
     color: #004d00;
 }
 
-.mainCategories {
+.mainCategories{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.dispositionItems {
+.dispositionItems{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.categoriesTitle {
+.categoriesTitle{
     font-family: 'Square Peg', cursive;
     color: #802b00;
 }
 
-.imageDisposition {
+.imageDisposition{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.detailsConfiguration {
-    text-decoration: none;
+.detailsConfiguration{
+    a{
+        text-decoration: none;
+    }
 }
 
-.seasonProductsPosition {
-    padding: 0 0 0 550px;
+.seasonProductsPosition{
+    padding: 0 0 0 550px !important;
 }
 
-.emptyCar {
+.emptyCar{
     font-size: 50px;
     font-family: 'Barlow Condensed', sans-serif;
     color: #004d00;
 }
 
-.anchorDetails {
+.anchorDetails{
     text-decoration: none !important;
+}
+
+.titlePosition{
+    padding: 0 550px 0 0;
+}
+
+.imageProductsPosition{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

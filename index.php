@@ -5,6 +5,7 @@
     define("ENV", parse_ini_file(".env"));
     
     define("ROOT", rtrim(str_replace("\\", "/", dirname($_SERVER["SCRIPT_NAME"])), "/"));
+    define("URL", "/FarmShop/");
 
     $url = explode("/", $_SERVER['REQUEST_URI']);
 
