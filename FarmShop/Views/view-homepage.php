@@ -30,7 +30,7 @@
                 <div>
                     <p><?php echo $seasonProduct["product_price"] ?>€/Kg</p>
                     <div class="text-center">
-                        <a href="" class="btn btn-success btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Adicionar</a>
+                        <a href="" class="btn btn-success btn-rounded mb-2" data-toggle="modal" data-target="#modalLoginForm">Adicionar</a>
                     </div>
                 </div>     
             </div>
@@ -128,10 +128,8 @@
                     <p><?php echo $randProduct["product_price"] ?>€/kg</p>
                 </div>
                 <div class="pb-3">
-                    <button class="btn btn-success" type="button">
-                        <a class="" href="<?php echo ROOT . "/productdetails/" . $randProduct["product_id"] ?>">Detalhes
-                        </a>
-                    </button>
+                    <a class="btn btn-success" href="<?php echo ROOT . "/productdetails/" . $randProduct["product_id"] ?>">Detalhes
+                    </a>
                 </div>
             </div>
         </div>

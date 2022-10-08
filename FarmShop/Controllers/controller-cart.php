@@ -2,7 +2,7 @@
 	
 	if (isset($_POST["send"])) {
 
-        require("Models/model-cart.php");
+        require("Models/model-products.php");
 
         $model = new Cart();
 

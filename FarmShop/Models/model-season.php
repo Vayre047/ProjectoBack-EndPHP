@@ -31,4 +31,18 @@
 		}
 	}
 
+	class Seasons extends Base{
+
+            public function allSeasons(){
+            $query = $this->db->prepare('
+                SELECT season_id, season_name
+                FROM season
+            ');
+
+            $query->execute();
+
+            return $query->fetchAll();
+        }
+    }
+
 ?>

@@ -1,14 +1,18 @@
 <?php
 
-    require("Models/model-navigation.php");
+   require("Models/model-category.php");
 
     $model = new Categories();
 
     $categories = $model->allCategories();
 
+    require("Models/model-season.php");
+
     $modelSeasons = new Seasons();
 
     $seasons = $modelSeasons->allSeasons();
+
+    require("Models/model-products.php");
 
     $modelProducts = new Products();
 
@@ -23,8 +27,6 @@
     $randProducts = $modelProducts->RandomProduct();
 
     $title = "FarmShop - Homepage";
-
-    require("Models/model-season.php");
 
     $date = date('y-m-d');
 

@@ -17,4 +17,18 @@
 		}
 	}
 
+	class Categories extends Base{
+        
+        public function allCategories(){
+            $query = $this->db->prepare("
+                SELECT category_id, category_name, category_image
+                FROM categories
+            ");
+
+            $query->execute();
+
+            return $query->fetchAll();
+        }
+    }
+
 ?>
