@@ -2,7 +2,7 @@
 	
 	require_once("Models/model-base.php");
 
-	class EachCategory extends Base{
+	class Categories extends Base{
 
 		public function OneCategory($id){
 			$query = $this->db->prepare("
@@ -15,9 +15,6 @@
 
 			return $query->fetchAll();
 		}
-	}
-
-	class Categories extends Base{
         
         public function allCategories(){
             $query = $this->db->prepare("

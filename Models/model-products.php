@@ -1,21 +1,6 @@
 <?php
 	
 	require_once("Models/model-base.php");
-    
-    class ProductsDetail extends Base{
-
-		public function getProduct($id){
-    		$query = $this->db->prepare("
-    			SELECT product_id, product_name, product_description, product_image, product_price, stock
-    			FROM products
-    			WHERE product_id = ?
-			");
-
-			$query->execute([$id]);
-
-			return $query->fetch();
-    	}
-    }
 
      class Products extends Base {
 
@@ -43,24 +28,6 @@
 
             return $query->fetchAll();
         }
-    }
-
-    class Cart extends Base{
-
-		public function cart($id){
-			$query = $this->db->prepare("
-				SELECT product_id, product_name, product_description, product_image, product_price, stock
-				FROM products
-				WHERE product_id = ?
-			");
-
-			$query->execute([$id]);
-
-			return $query->fetchAll();
-		}
-	}
-
-    class ListProducts extends Base{
 
 		public function listProducts($id){
 			$query = $this->db->prepare("
@@ -75,7 +42,30 @@
 
 			return $query->fetchAll();
 		}
-	}
 
-    
+		public function getProduct($id){
+    		$query = $this->db->prepare("
+    			SELECT product_id, product_name, product_description, product_image, product_price, stock
+    			FROM products
+    			WHERE product_id = ?
+			");
+
+			$query->execute([$id]);
+
+			return $query->fetch();
+    	}
+
+		public function cart($id){
+			$query = $this->db->prepare("
+				SELECT product_id, product_name, product_description, product_image, product_price, stock
+				FROM products
+				WHERE product_id = ?
+			");
+
+			$query->execute([$id]);
+
+			return $query->fetchAll();
+		}
+    }
+
 ?>

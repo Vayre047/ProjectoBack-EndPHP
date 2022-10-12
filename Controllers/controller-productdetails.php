@@ -6,10 +6,6 @@
         exit;
     }*/
 
-	require("Models/model-products.php");
-
-	$modelProducts = new ProductsDetail();
-
 	$productDetail = $modelProducts->getProduct($id);
 
 	$title = $productDetail["product_name"];

@@ -19,6 +19,24 @@
     if(!in_array($controller, $controllers)){
         die("Sem Atribução de Página");
     }
+    
+    require("Models/model-category.php");
+    
+    $modelCategories = new Categories();
+
+    $categories = $modelCategories->allCategories();
+    
+    require("Models/model-season.php");
+    
+    $modelSeasons = new Season();
+    
+    $seasons = $modelSeasons->allSeasons();
+
+    require("Models/model-products.php");
+
+    $modelProducts = new Products();
+
+    $products = $modelProducts->allProducts();
 
     require("Controllers/controller-" . $controller . ".php");
 
