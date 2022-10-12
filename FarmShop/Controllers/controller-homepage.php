@@ -8,7 +8,7 @@
 
     require("Models/model-season.php");
 
-    $modelSeasons = new Seasons();
+    $modelSeasons = new Season();
 
     $seasons = $modelSeasons->allSeasons();
 

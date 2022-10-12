@@ -6,7 +6,7 @@
 
 	$typeOfSeasons = new Season();
 
-	$winterSeason = $typeOfSeasons->productSeason($id);
+	$winterSeason = $typeOfSeasons->getSeasonalProducts();
 
 	require("Views/view-season.php");
 

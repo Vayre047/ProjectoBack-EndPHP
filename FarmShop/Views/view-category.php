@@ -5,7 +5,7 @@
 ?>
 
 	<div>
-		<p><?php echo $onecategory["category_name"]; ?></p>
+		<p><?php echo $onecategory[0]["category_name"]; ?></p>
 	</div>
 
 <?php

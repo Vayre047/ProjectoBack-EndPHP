@@ -7,42 +7,55 @@
 		public function getSeason($date){
 			$query = $this->db->prepare("
 				SELECT season_id, season_name
-				FROM season
-				WHERE ? BETWEEN date_start AND date_end 
+				FROM seasons
+				WHERE
+                    CAST(CONCAT(YEAR(CURDATE()), '-', seasons.date_start) as DATE) >= CURRENT_DATE AND
+                    CAST(CONCAT(YEAR(CURDATE()), '-', seasons.date_end) as DATE) <= CURRENT_DATE
 			");
 
-			$query->execute(["2022-07-20"]);
+			$query->execute();
 
 			return $query->fetch();
 		}
 
-		public function productSeason($id){
+		/*
+			  SELECT products.name, .......
+                FROM seasons
+                INNER JOIN seasons_products USING(season_id)
+                INNER JOIN products USING(product_id)
+                WHERE
+                    CAST(CONCAT(CURRENT_YEAR, '-', seasons.start_date) as DATE) >= CURRENT_DATE AND
+                    CAST(CONCAT(CURRENT_YEAR, '-', seasons.end_date) as DATE) <= CURRENT_DATE
+
+		*/
+
+		public function getSeasonalProducts(){
 			$query = $this->db->prepare("
-				SELECT season.season_name, products.season_id, products.product_name, products.product_image, products.product_description, season.season_description
-				FROM season
-				INNER JOIN products
-				ON season.season_id = products.season_id
-				WHERE season.season_id = ?
+				SELECT seasons.season_name, products.season_id, products.product_name, products.product_image, products.product_description, seasons.season_description
+				FROM seasons
+				INNER JOIN products USING (season_id)
+				WHERE
+                    CAST(CONCAT(YEAR(CURDATE()), '-', seasons.date_start) as DATE) >= CURRENT_DATE AND
+                    CAST(CONCAT(YEAR(CURDATE()), '-', seasons.date_end) as DATE) <= CURRENT_DATE
 			");
 
-			$query->execute([$id]);
+			$query->execute();
 
 			return $query->fetchAll();
 		}
-	}
 
-	class Seasons extends Base{
-
-            public function allSeasons(){
+		  public function allSeasons(){
             $query = $this->db->prepare('
                 SELECT season_id, season_name
-                FROM season
+                FROM seasons
             ');
 
             $query->execute();
 
             return $query->fetchAll();
         }
-    }
+	}
+
+	
 
 ?>
