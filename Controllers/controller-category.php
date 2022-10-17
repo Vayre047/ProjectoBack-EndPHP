@@ -1,9 +1,6 @@
 <?php
 
-
 	$title = "FarmShop - Categorias";
-
-	
 
 	$onecategory = $modelCategories->OneCategory($id);
 	

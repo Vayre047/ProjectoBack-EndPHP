@@ -1,4 +1,5 @@
 <?php
+    
 	require("Models/model-category.php");
 
     $model = new Categories();
@@ -18,4 +19,5 @@
     $products = $modelProducts->allProducts();
 
     require("Views/Layout/header.php");
+
 ?>

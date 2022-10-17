@@ -11,7 +11,7 @@
 	    <p class="card-text"><?php echo $productDetail["product_description"]; ?></p>
 	    <p><?php echo $productDetail["product_price"]; ?> €/Kg</p>
 		<div>
-			<input type="number" name="quantity" min="0" max="<?php echo $productDetail["stock"]; ?>">
+			<input type="number" name="quantity" value="1" min="1" max="<?php echo $productDetail["stock"]; ?>">
 			<div class="pt-3 pb-3">
 				<?php echo '<a class="btn btn-success" href="'.ROOT.'/cart">
 						Adicionar ao Carrinho

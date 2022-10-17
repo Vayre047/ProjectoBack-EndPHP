@@ -16,7 +16,7 @@
     }
 ?>
             </div>  
-            <div class="d-flex flex-row seasonProductsPosition">
+            <div class="d-flex flex-row seasonalProductsDisplay seasonProductsPosition">
 <?php
     foreach ($seasonProducts as $seasonProduct) {
 ?>
@@ -30,14 +30,27 @@
                 <div>
                     <p><?php echo $seasonProduct["product_price"] ?>€/Kg</p>
                     <div class="text-center">
-                        <a href="" class="btn btn-success btn-rounded mb-2" data-toggle="modal" data-target="#modalLoginForm">Adicionar</a>
+                        <button class="btn btn-success btn-rounded mb-2 addCartModal" type="button" data-toggle="modal" data-target="#modalLoginForm" data-product_id="<?php echo $seasonProduct["product_id"] ?>" data-stock="<?php echo $seasonProduct["stock"]?>">Adicionar</button>
                     </div>
                 </div>     
-            </div>
-                <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        </div>      
+<?php
+    
+    if(intval($seasonProduct["stock"])>0){
+
+?>
+            
+            
+<?php
+        }else{
+            echo "<p>Esgotado</p>";
+        }
+    }
+?>  
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
                   <div class="modal-dialog bg-grey-500" role="document">
-                    <form method="post" action="<?php echo ROOT . "/cart" ?>">
+                    <form id="formModal" method="post" action="<?php echo ROOT . "/cart" ?>">
                         <div class="modal-content">
                           <div class="modal-header text-center">
                             <h4 class="modal-title w-100 font-weight-bold">Adicionar ao Carrinho</h4>
@@ -49,8 +62,8 @@
                             <div class="md-form mb-5">
                               <i class="fas fa-envelope prefix grey-text"></i>
                               <label data-error="Wrong Quantity" data-success="right" for="quantity">Quantidade:</label>
-                              <input type="number" name="quantity" value="1" min="1" max="<?php echo $seasonProduct["stock"]; ?>" class="form-control validate" required>
-                              <input type="hidden" name="product_id" value="<?php echo $seasonProduct["product_id"]?>">
+                              <input type="number" name="quantity" value="1" min="1" max="1" class="form-control validate" required>
+                              <input type="hidden" name="product_id" value="">
                             </div>
                           </div>
                             <div class="modal-footer d-flex justify-content-center">
@@ -65,21 +78,10 @@
                     </form>
                   </div>
                 </div>
-                
-<?php
-    
-    if(intval($seasonProduct["stock"])>0){
-
-?>
-            
-            
-<?php
-        }else{
-            echo "<p>Esgotado</p>";
-        }
-    }
-?>  
         </div>
+        <?php
+            
+        ?>
         <div class="text-center">           
             <h2 class="subtitlesStyle h1 pt-2">Categorias:</h2>
 <?php
@@ -94,7 +96,9 @@
             <div class="ps-5 pt-5 pb-5 col-md-<?php echo $widthCategoryCol ?>">
                 <div class="row pt-3"> 
                     <figure class="mainCategories ps-5 col-md-4">
-                        <img class="ps-5" src="<?php echo ROOT . "/Images/" . $category["category_image"]; ?>">
+                        <a href="<?php echo ROOT . "/category/" . $category["category_id"]; ?>">
+                            <img class="ps-5" src="<?php echo ROOT . "/Images/" . $category["category_image"]; ?>">
+                        </a>
                     </figure>
                 </div>
             </div>
