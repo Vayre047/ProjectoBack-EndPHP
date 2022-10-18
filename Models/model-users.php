@@ -38,6 +38,13 @@
 
 			$user = $query->fetch();
 
+			if(
+                !empty($user) &&
+                password_verify($data["password"], $user["password"])
+                ){
+                    return $user;
+            }
+
 			return [];
 		} 
 	}

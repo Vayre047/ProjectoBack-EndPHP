@@ -235,4 +235,8 @@ body {
 .seasonalProductsDisplay {
   display: flex;
   flex-direction: row;
+}
+
+.removeConfiguration {
+  text-decoration: none;
 }/*# sourceMappingURL=index.css.map */

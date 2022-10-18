@@ -1,17 +1,39 @@
 <?php
-	
-	/*
-	class Order extends Base{
-		public function orderShipping(){
-			$query = $this->db->prepare("
-				SELECT shipping_date
-				FROM orders
-			");
+/*
+    require_once("Models/model-base.php");
 
-			$query->execute();
+    class Orders extends Base{
 
-			return $query->fetchAll();
-		}
-	}*/
+        public function create($user_id){
+            $query = $this->db->prepare("
+                INSERT INTO orders (user_id)
+                VALUES(?)
+            ");
+            
+            $query->execute([
+                $user_id
+            ]);
+    
+            return $this->db->lastInsertId();
+        }
 
+         public function createDetail($data){
+            
+            $query = $this->db->prepare("
+                INSERT INTO orderdetails (order_id, product_id, quantity, price_each)
+                VALUES(?, ?, ?, ?)
+            ");
+            
+
+            return $query->execute([
+                $data["order_id"],
+                $data["product_id"],
+                $data["quantity"],
+                $data["price"]
+            ]);
+    
+            return $this->db->lastInsertId();
+        }
+    }
+	*/
 ?>

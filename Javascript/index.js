@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(result => {
                     deletedButton.remove();
                 })
-                .catch(err => alert("Existe um erro, tente novamente"));
+                .catch(err => alert("Ocorreu um erro, tente novamente"));
         });
     });
 });

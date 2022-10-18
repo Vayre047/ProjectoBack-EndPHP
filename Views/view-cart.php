@@ -24,7 +24,6 @@
     		<p class="h3 titlePosition pt-4"><?php echo $product["product_name"]?></p>
     		<p class="h4">Quantidade:
     			<select>
-				
 		    		<?php for ($i = 1; $i <= $product["stock"]; $i++) { ?> 
 		    			<option <?php if($product["quantity"] == $i){ echo "selected";}?> >
 		    				<?php
@@ -38,8 +37,8 @@
     		</p>
 	    </div>
 	    <div>
-			<?php $total = 0 ?>
-	    	<p class="h4">Total: <?php $total += ($product["quantity"] * $product["product_price"]) ?></p>
+			<?php $totalPrice = 0 ?>
+	    	<p class="h4">Total: <?php $totalPrice += ($product["quantity"] * $product["product_price"]) ?></p>
 	    </div>
 	    <div class="col d-flex">
 			
@@ -51,6 +50,9 @@
 		<?php
 			}
 		?>
+	</div>
+	<div class="text-center">
+		<a class="removeConfiguration" href="<?php  echo ROOT . "/checkout"; ?>">Efectuar Encomenda</a>
 	</div>
 
 	<?php

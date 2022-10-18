@@ -20,8 +20,9 @@
 			mb_strlen($_POST["city"]) >= 5 &&
 			mb_strlen($_POST["city"]) <= 40
 		){
-                $modelUsers = new Users();
-		      $user_id = $modelUsers->registerDetails($_POST);
+				$modelUsers = new Users();
+				$user_id = $modelUsers->registerDetails($_POST);
+				
 			if(!empty($user_id)){
 				$_SESSION["user_id"] = $user_id;
 				header("Location: " . ROOT . "/" );
