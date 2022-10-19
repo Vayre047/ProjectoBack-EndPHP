@@ -6,11 +6,11 @@
 
 		public function getSeason($date){
 			$query = $this->db->prepare("
-				SELECT season_id, season_name
+				SELECT season_id, season_name, date_start, date_end
 				FROM seasons
 				WHERE
-                    CAST(CONCAT(YEAR(CURDATE()), '-', seasons.date_start) as DATE) >= CURRENT_DATE AND
-                    CAST(CONCAT(YEAR(CURDATE()), '-', seasons.date_end) as DATE) <= CURRENT_DATE
+                    CAST(CONCAT(YEAR(CURDATE()), '-', seasons.date_start) as DATE) <= CURRENT_DATE AND
+                    CAST(CONCAT(YEAR(CURDATE()), '-', seasons.date_end) as DATE) >= CURRENT_DATE
 			");
 
 			$query->execute();

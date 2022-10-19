@@ -7,7 +7,7 @@
 <?php
 
     if(isset($message)){
-        echo '<p class="text-center" role="alert">' .$message . '</p>';
+        echo '<p class="text-center" role="alert">' .$message. '</p>';
     }
 
 ?>
@@ -20,7 +20,7 @@
     </div>
     <div>
         <label class="pt-1">
-            <p>Se ainda não obteve conta <a href="<?php echo ROOT;  ?>/register">faça-o rapidamente.</a></p>
+            <p>Se ainda não possui conta <a href="<?php echo ROOT;  ?>/register">faça-o rapidamente.</a></p>
             <input type="checkbox" name="saveInformation">
             Guardar os seus dados
         </label>

@@ -18,13 +18,13 @@
         <div class="grid-container">
             <div class="sm-box sm-box--1">
                 <?php echo '<a class="ps-5" href="' .ROOT.'/">
-                    <img src="'.URL.'Images/agronomy-icon.png">
+                    <img src="'.URL.'Images/agronomy-icon.png" alt="Homepage">
                 </a>'?>
             </div>
              <div class="sm-box sm-box--2 pe-5">
                 <div class="primaryConfiguration">
-                    <?php echo '<a href="' .ROOT. '/listproducts">
-                        <button type="button" class="navbarButton">Productos</button>
+                    <?php echo '<a class="navbarButton" href="' .ROOT. '/listproducts">
+                        Productos
                     </a>' ?>
                 <ul class="navbarList">
     <?php

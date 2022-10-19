@@ -4,7 +4,7 @@
 
         header("Content-Type: application/json");
 
-        unset($_SESSION["cart"][123]);
+        unset($_SESSION["cart"][$id]);
 
         echo '{"Message":"Accepted"}';
     }else{

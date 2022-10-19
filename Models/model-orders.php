@@ -1,10 +1,10 @@
 <?php
-/*
+    /*
     require_once("Models/model-base.php");
 
     class Orders extends Base{
 
-        public function create($user_id){
+        public function createOrder($user_id){
             $query = $this->db->prepare("
                 INSERT INTO orders (user_id)
                 VALUES(?)
@@ -17,7 +17,7 @@
             return $this->db->lastInsertId();
         }
 
-         public function createDetail($data){
+         public function createOrderDetail($data){
             
             $query = $this->db->prepare("
                 INSERT INTO orderdetails (order_id, product_id, quantity, price_each)

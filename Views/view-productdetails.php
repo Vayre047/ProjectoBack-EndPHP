@@ -13,8 +13,10 @@
 		<div>
 			<input type="number" name="quantity" value="1" min="1" max="<?php echo $productDetail["stock"]; ?>">
 			<div class="pt-3 pb-3">
-				<?php echo '<a class="btn btn-success" href="'.ROOT.'/cart">
-						Adicionar ao Carrinho
+				<?php echo '<a href="'.ROOT.'/cart">
+						<button type="submit" name="send" class="btn btn-success" onclick="addProducts()">  
+							Adicionar
+						</button>
 					</a>';
 				?>
 			</div>

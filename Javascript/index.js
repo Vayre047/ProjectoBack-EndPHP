@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const addCartModalButtons = document.getElementsByClassName("addCartModal");
     const modalForm = document.getElementById("modalLoginForm");
     const removeBtn = document.querySelectorAll(".removeBtn");
-    const root = document.querySelector("body").dataset.root;
 
     for (const button of addCartModalButtons) {
         button.addEventListener("click", () => {
@@ -20,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         button.addEventListener("click", () => {
 
-            fetch(root + "/removeitem/" + productItem, {
+            fetch("/removeitem/" + productItem, {
                 "method": "POST",
-                "Content-Type": "application/x-www-form-urlencoded"
+                "headers": {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
             })
                 .then(response => response.json())
                 .then(result => {
