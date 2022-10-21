@@ -1,7 +1,5 @@
 <?php
 
-	require("Models/model-products.php");
-
 	$title = "FarmShop - Lista de Produtos";
 
     $listAnimalsProducts = $modelProducts->listProducts(1);

@@ -39,8 +39,7 @@
     if(intval($seasonProduct["stock"])>0){
 
 ?>
-            
-            
+                       
 <?php
         }else{
             echo "<p>Esgotado</p>";
@@ -76,8 +75,8 @@
                             </div>
                         </div>
                     </form>
-                  </div>
                 </div>
+            </div>
         </div>
         <?php
             

@@ -11,7 +11,6 @@
     }
 
     require("Models/model-orders.php");
-    require("Models/model-products.php");
 
     $updatedOrders = new Orders();
     $updatedProducts = new Products();

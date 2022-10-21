@@ -14,7 +14,6 @@
 	<div class="container text-center pb-5">
 	<?php
 		foreach($_SESSION["cart"] as $product){
-
 	?>
 	<div class="row" data-product_id="<?php echo $product["product_id"] ?>">
 	    <div class="col col-4">
@@ -38,9 +37,9 @@
 	    </div>
 	    <div>
 			<?php $totalPrice = 0 ?>
-	    	<p class="h4">Total: <?php $totalPrice += ($product["quantity"] * $product["product_price"]) ?></p>
+	    	<p class="h4">Total: <?php echo $totalPrice += ($product["quantity"] * $product["product_price"]) ?>€</p>
 	    </div>
-	    <div class="col d-flex">
+	    <div class="col">
 			
 	    </div>
 	    <div class="col">
@@ -52,7 +51,7 @@
 		?>
 	</div>
 	<div class="text-center">
-		<a class="removeConfiguration" href="<?php  echo ROOT . "/checkout"; ?>">Efectuar Encomenda</a>
+		<a class="removeConfiguration btn btn-success" href="<?php  echo ROOT . "/checkout"; ?>">Efectuar Encomenda</a>
 	</div>
 
 	<?php

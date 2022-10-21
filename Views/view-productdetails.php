@@ -11,14 +11,19 @@
 	    <p class="card-text"><?php echo $productDetail["product_description"]; ?></p>
 	    <p><?php echo $productDetail["product_price"]; ?> €/Kg</p>
 		<div>
-			<input type="number" name="quantity" value="1" min="1" max="<?php echo $productDetail["stock"]; ?>">
 			<div class="pt-3 pb-3">
-				<?php echo '<a href="'.ROOT.'/cart">
-						<button type="submit" name="send" class="btn btn-success" onclick="addProducts()">  
+				<form method="post" action="<?php echo ROOT . "/cart" ?>">
+				<div>
+					<div>
+						<input type="number" name="quantity" value="1" min="1" max="<?php echo $productDetail["stock"]; ?>">
+						<input type="hidden" name="product_id" value="<?php echo $productDetail["product_id"]; ?>">
+					</div>
+					<div class="d-flex justify-content-center pt-3">
+						<button type="submit" name="send" class="btn btn-success">  
 							Adicionar
 						</button>
-					</a>';
-				?>
+					</div>
+				</form>
 			</div>
 		</div>
 	  </div>

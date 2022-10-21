@@ -22,7 +22,6 @@
 
                     exit;
                 }
-        
             }
 
             $message = "Informação não está correcta, confirme se o email ou password estão correctos";

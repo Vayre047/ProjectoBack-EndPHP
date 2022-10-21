@@ -1,5 +1,5 @@
 <?php
-	
+
 	if (isset($_POST["send"])) {
 
         $product = $modelProducts->getProduct($_POST["product_id"]);
