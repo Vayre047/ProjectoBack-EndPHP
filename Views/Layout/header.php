@@ -17,13 +17,13 @@
     <header>
         <div class="grid-container">
             <div class="sm-box sm-box--1">
-                <?php echo '<a class="ps-5" href="' .ROOT.'/">
+                <?php echo '<a class="ps-5 mai" href="' .ROOT.'/">
                     <img src="'.URL.'Images/agronomy-icon.png" alt="Homepage">
                 </a>'?>
             </div>
              <div class="sm-box sm-box--2 pe-5">
                 <div class="primaryConfiguration">
-                    <?php echo '<a class="navbarButton" href="' .ROOT. '/listproducts">
+                    <?php echo '<a class="mainLink" href="' .ROOT. '/listproducts">
                         Productos
                     </a>' ?>
                 <ul class="navbarList">

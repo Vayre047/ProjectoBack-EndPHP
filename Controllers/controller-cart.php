@@ -17,9 +17,7 @@
                 echo '<p>Error Message: Not Found</p>';
             }
         }
-    }else{
-            echo '<p>Error Message: Not Found Anymore</p>';
-        }
+    }
 
     $title = "Carrinho";
 

@@ -239,4 +239,15 @@ body {
 
 .removeConfiguration {
   text-decoration: none;
+}
+
+.languagesConfiguration {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
+.optionConfiguration {
+  background-color: transparent;
 }/*# sourceMappingURL=index.css.map */
