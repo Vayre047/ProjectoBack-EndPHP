@@ -13,12 +13,12 @@
                     "product_name" => $product["product_name"],
                     "product_price" => $product["product_price"],
                     "stock" => $product["stock"]];
+                header("Location: " .ROOT. "/cart");
             }else{
                 echo '<p>Error Message: Not Found</p>';
             }
         }
     }
-
     $title = "Carrinho";
 
     require("Views/view-cart.php");

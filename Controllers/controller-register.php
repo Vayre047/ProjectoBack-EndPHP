@@ -25,6 +25,7 @@
 				
 			if(!empty($user_id)){
 				$_SESSION["user_id"] = $user_id;
+				$_SESSION["user_id"]["details"] = $model->getUser($_POST["email"]);
 				header("Location: " . ROOT . "/" );
 			}else{
 				$message = "Respectivo e-mail já existe";

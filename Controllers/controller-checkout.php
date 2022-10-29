@@ -1,6 +1,8 @@
 <?php
 
     if(!isset($_SESSION["user_id"])){
+    ?>
+        <?php
         header("Location: " . ROOT . "/login");
         exit;
     }

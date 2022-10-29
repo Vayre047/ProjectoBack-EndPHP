@@ -47,6 +47,27 @@
 
 			return [];
 		} 
+
+		public function getUser($data){
+			$query = $this->db->prepare("
+					SELECT user_firstName, user_lastName, user_email, password, user_address, postal_code, city
+					FROM users
+					WHERE user_email = ?
+				");
+
+			$query->execute([
+				$data["user_email"]
+			]);
+
+			$user = $query->fetch();
+
+			if(!empty($user) ){
+                return $user;
+            }
+
+			return [];
+		} 
+
 	}
 
 ?> 

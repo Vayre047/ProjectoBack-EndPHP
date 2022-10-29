@@ -31,7 +31,7 @@
 
 		public function listProducts($id){
 			$query = $this->db->prepare("
-				SELECT categories.category_id, categories.category_name, products.product_id, products.product_image, products.product_name
+				SELECT categories.category_id, categories.category_name, products.product_id, products.product_image, product_price
 				FROM products
 				INNER JOIN categories
 				ON categories.category_id = products.category_id

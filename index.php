@@ -10,7 +10,7 @@
     $url = explode("/", $_SERVER['REQUEST_URI']);
 
     $controllers = [
-        "cart", "homepage", "login", "logout", "productdetails", "register", "listproducts", "season", "category", "removeitem", "paymentmethod"
+        "cart", "homepage", "login", "logout", "productdetails", "register", "listproducts", "season", "category", "removeitem", "paymentmethod", "admin"
     ];
 
     $controller = $url[1] ?: "homepage";
@@ -38,6 +38,20 @@
     $modelProducts = new Products();
 
     $products = $modelProducts->allProducts();
+
+    require("Models/model-users.php");
+
+    $modelUsers = new Users();
+
+    if(isset($_SESSION["user_id"])){
+        $user = $modelUsers->getUser($_POST["email"]);
+    }
+
+    require("Models/model-languages.php");
+
+    $modelLanguages = new Languages();
+
+    $languages = $modelLanguages->getAllLanguages($id);
 
     require("Controllers/controller-" . $controller . ".php");
 

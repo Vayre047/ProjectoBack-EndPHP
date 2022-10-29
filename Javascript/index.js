@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const addCartModalButtons = document.getElementsByClassName("addCartModal");
     const modalForm = document.getElementById("modalLoginForm");
     const removeBtn = document.querySelectorAll(".removeBtn");
+    const langBtn = document.getElementById("langBtn");
 
     for (const button of addCartModalButtons) {
         button.addEventListener("click", () => {
@@ -13,10 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    langBtn.addEventListener("click", () => {
+        
+    });
+
     removeBtn.forEach(button => {
         const deletedButton = button.parentNode.parentNode;
         const productItem = deletedButton.dataset.product_id;
-        
+
         button.addEventListener("click", () => {
 
             fetch("/removeitem/" + productItem, {
@@ -30,6 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     deletedButton.remove();
                 })
                 .catch(err => alert("Ocorreu um erro, tente novamente"));
+        });
+    });
+
+    removeBtn.forEach(btn => {
+        btn.addEventListener("click", () => {
+            unset($_SESSION["cart"][$_POST['[name="product_id"]']]);
         });
     });
 });

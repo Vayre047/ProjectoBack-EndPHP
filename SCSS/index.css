@@ -241,13 +241,9 @@ body {
   text-decoration: none;
 }
 
-.languagesConfiguration {
-  width: 100%;
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-}
-
 .optionConfiguration {
   background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }/*# sourceMappingURL=index.css.map */

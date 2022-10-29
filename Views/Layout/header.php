@@ -17,7 +17,7 @@
     <header>
         <div class="grid-container">
             <div class="sm-box sm-box--1">
-                <?php echo '<a class="ps-5 mai" href="' .ROOT.'/">
+                <?php echo '<a class="ps-5" href="' .ROOT.'/">
                     <img src="'.URL.'Images/agronomy-icon.png" alt="Homepage">
                 </a>'?>
             </div>
@@ -64,12 +64,28 @@
             <div class="sm-box sm-box--5">
                 <h1 class="pt-1 mainTitle">Horizon Farm</h1>
             </div>
-            <div class="pt-2 sm-box sm-box--6">
-                <?php echo '<a class="mainLink" href="' .ROOT. '/login">Login</a>';?>
-            </div>
-            <div class="pt-2 sm-box sm-box--7">
-                <?php echo '<a class="mainLink" href="' .ROOT. '/register">Criar Conta</a>';?>
-            </div>
+            <?php
+            if(!isset($_SESSION["user_id"])){
+             ?>
+                <div class="pt-2 sm-box sm-box--6">
+                    <?php echo '<a class="mainLink" href="' .ROOT. '/login">Login</a>';?>
+                </div>
+                <div class="pt-2 sm-box sm-box--7">
+                    <?php echo '<a class="mainLink" href="' .ROOT. '/register">Criar Conta</a>';?>
+                </div>
+            <?php
+            }else{
+            ?>
+                 <div class="pt-2 sm-box sm-box--6">
+                    <?php echo ' Olá' . $user?>
+                </div>
+                <div class="pt-2 sm-box sm-box--7">
+                    <?php echo '<a class="mainLink" href="' .ROOT. '/conta">A minha conta</a>';?>
+                </div>
+            <?php
+            }
+            ?>
+            
             <div class="sm-box sm-box--8">
                 <?php echo '<a href="'.ROOT.'/cart">
                     <img src="'.URL.'Images/harvest-icon.png">

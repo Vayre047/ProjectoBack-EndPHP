@@ -4,7 +4,13 @@
 
 <h1 class="text-center"><?php echo $title; ?></h1>
 
+
 <?php
+    if(!isset($_SESSION["user_id"]) && !empty($_SESSION["cart"])){
+       ?>
+      <p class="h4 text-center py-4"> Entre na sua conta antes de avançar para pagamento, ou <a href="<?php echo ROOT;  ?>/register">crie uma</a> </p>  
+      <?php
+    }
 
     if(isset($message)){
         echo '<p class="text-center" role="alert">' .$message. '</p>';
@@ -20,7 +26,6 @@
     </div>
     <div>
         <label class="pt-1">
-            <p>Se ainda não possui conta <a href="<?php echo ROOT;  ?>/register">faça-o rapidamente.</a></p>
             <input type="checkbox" name="saveInformation">
             Guardar os seus dados
         </label>
