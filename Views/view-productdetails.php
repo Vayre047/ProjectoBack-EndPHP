@@ -31,6 +31,6 @@
 
 <?php
 	
-	require_once("Views/Layout/footer.php");
+	require_once("Layout/footer.php");
 
 ?>

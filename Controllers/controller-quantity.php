@@ -1,6 +1,6 @@
 <?php
 
-    //Method: POST(quando é uma alteração, nunca pode ser GET)
+    // Method: POST(quando é uma alteração, nunca pode ser GET)
 
     if($_SERVER["REQUEST_METHOD"] === "POST" && !empty($product_id) && is_numeric($product_id) && isset($_POST["quantity"]) && intval($_POST["quantity"]) > 0 && 
     isset($_SESSION["cart"][$product_id]) && $_SESSION["cart"][$product_id]["stock"] >= $_POST["quantity"]){

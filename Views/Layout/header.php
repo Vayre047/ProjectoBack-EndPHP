@@ -76,11 +76,11 @@
             <?php
             }else{
             ?>
-                 <div class="pt-2 sm-box sm-box--6">
-                    <?php echo ' Olá' . $user?>
-                </div>
                 <div class="pt-2 sm-box sm-box--7">
-                    <?php echo '<a class="mainLink" href="' .ROOT. '/conta">A minha conta</a>';?>
+                    <?php echo '<a class="mainLink" href="' .ROOT. '/conta">Olá '. $_SESSION["user_id"]["user_firstName"] .'</a>';?>
+                </div>
+                <div class="pt-2 sm-box sm-box--6">
+                    <?php echo '<a href="'.ROOT.'/logout"> Sair </a>'; ?>
                 </div>
             <?php
             }

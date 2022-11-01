@@ -1,4 +1,4 @@
-        <div class="w-100">
+        <div class="w-100"> 
             <div class="optionConfiguration">
                 <?php
                     foreach($languages as $language){

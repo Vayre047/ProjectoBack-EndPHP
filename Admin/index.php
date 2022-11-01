@@ -10,7 +10,7 @@
     $url = explode("/", $_SERVER['REQUEST_URI']);
 
     $controllers = [
-        "admin", "products", "user"
+        "admin", "products", "user", "login", "home", "category"
     ];
 
     $controller = $url[0] ?: "admin";
@@ -20,5 +20,5 @@
     if(!in_array($controller, $controllers)){
         die("Sem Atribução de Página");
     }
-   
+   require("Controllers/controller-" . $controller . ".php");
 ?>

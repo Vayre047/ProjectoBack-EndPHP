@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     langBtn.addEventListener("click", () => {
         
     });
-
+    
     removeBtn.forEach(button => {
         const deletedButton = button.parentNode.parentNode;
         const productItem = deletedButton.dataset.product_id;
-
+        
         button.addEventListener("click", () => {
 
             fetch("/removeitem/" + productItem, {

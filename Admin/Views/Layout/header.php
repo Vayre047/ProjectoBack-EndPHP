@@ -16,6 +16,7 @@
 <body data-root="<?php echo ROOT; ?>">
     <header> 
         <div class="">
-            <h1 class="pt-1 mainTitle">Horizon Farm</h1>
+            <h1 class="pt-1 mainTitle">Farm Shop</h1>
+            <p class="pt-4 mainTitle h2">Administrative Area</p>
         </div>
     </header>

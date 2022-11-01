@@ -3,11 +3,10 @@
     $title = "Efectuar Login";
 
     if(isset($_POST["send"])){
-        if(
-            !empty($_POST["email"]) &&
+        if(!empty($_POST["email"]) &&
             !empty($_POST["password"]) &&
             filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) &&
-             mb_strlen($_POST["password"]) >= 8 &&
+             mb_strlen($_POST["password"]) >= 5 &&
              mb_strlen($_POST["password"]) <= 1000
             ){
                 require("Models/model-users.php");
@@ -16,16 +15,16 @@
                 $user = $model->loginDetails($_POST);
 
                 if(!empty($user)){
-                    $_SESSION["user_id"] = $user["user_id"];
-                    $_SESSION["user_id"]["details"] = $model->getUser($_POST["email"]);
-
+                    $_SESSION["user_id"] = $user;
+    
                     header("Location: " . ROOT . "/");
-
+                    //var_dump($_SESSION["user_id"]);
                     exit;
                 }
+        
             }
 
-            $message = "Informação não está correcta, confirme se o email ou password estão correctos";
+            $message = "Dados incorretos, confirme preenchimento do email ou password";
             
     }
 

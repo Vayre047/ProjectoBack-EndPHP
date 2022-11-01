@@ -10,10 +10,11 @@
     $url = explode("/", $_SERVER['REQUEST_URI']);
 
     $controllers = [
-        "cart", "homepage", "login", "logout", "productdetails", "register", "listproducts", "season", "category", "removeitem", "paymentmethod", "admin"
+        "cart", "homepage", "login", "logout", "productdetails", "register", "listproducts", 
+        "season", "category", "removeitem", "paymentmethod", "conta", "admin", "home", "addUser", "addProduct", "addCategory", "delUpdUser", "delUpdProducts", "delUpdCategory"
     ];
 
-    $controller = $url[1] ?: "homepage";
+    $controller = $url[1] ?: "homepage";    
 
     $id = $url[2] ?? "";
 
@@ -39,20 +40,18 @@
 
     $products = $modelProducts->allProducts();
 
-    require("Models/model-users.php");
-
-    $modelUsers = new Users();
-
-    if(isset($_SESSION["user_id"])){
-        $user = $modelUsers->getUser($_POST["email"]);
-    }
-
     require("Models/model-languages.php");
 
     $modelLanguages = new Languages();
 
-    $languages = $modelLanguages->getAllLanguages($id);
+	$languages = $modelLanguages->getAllLanguages($id);
+	
+	require("Views/Layout/footer.php");
 
-    require("Controllers/controller-" . $controller . ".php");
+    if($url[1] == 'admin' || $url[1] == 'home' || $url[1] == 'addUser' || $url[1] == 'addProduct' || $url[1] == 'addCategory' || $url[1] == 'delUpdUser' || $url[1] == 'delUpdProducts' || $url[1] == 'delUpdCategory'){
+        require("Admin/Controllers/controller-" . $controller . ".php");
+    }else{
+        require("Controllers/controller-" . $controller . ".php");
+    }
 
 ?>
