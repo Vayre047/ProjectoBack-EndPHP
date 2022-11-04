@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Dancing+Script&family=Edu+TAS+Beginner&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?=URL ?>../SCSS/index.scss">
-    <script src="../Javascript/index.js" type ="text/javascript"></script>
+    <script src="../../Javascript/index.js" type ="text/javascript"></script>
     <title><?= $title; ?></title>
 </head>
 <body data-root="<?php echo ROOT; ?>">

@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const addCartModalButtons = document.getElementsByClassName("addCartModal");
+    const updateUser = document.getElementsByClassName("updateUser");
     const modalForm = document.getElementById("modalLoginForm");
     const removeBtn = document.querySelectorAll(".removeBtn");
-    const langBtn = document.getElementById("langBtn");
+    const uptadeUser = document.getElementById("formUpdateUser");
 
     for (const button of addCartModalButtons) {
         button.addEventListener("click", () => {
@@ -14,10 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    langBtn.addEventListener("click", () => {
-        
-    });
-    
+    for(const button of updateUser) {
+        button.addEventListener("click", () => {
+            const inputUserId = uptadeUser.querySelector('[name="user_id"]');
+
+            inputUserId.value = button.dataset.user_id;
+        });
+    }
+
     removeBtn.forEach(button => {
         const deletedButton = button.parentNode.parentNode;
         const productItem = deletedButton.dataset.product_id;

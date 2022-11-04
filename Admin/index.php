@@ -10,7 +10,7 @@
     $url = explode("/", $_SERVER['REQUEST_URI']);
 
     $controllers = [
-        "admin", "products", "user", "login", "home", "category"
+        "admin", "products", "user", "login", "home"
     ];
 
     $controller = $url[0] ?: "admin";

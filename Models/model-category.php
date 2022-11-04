@@ -26,8 +26,7 @@
 
             return $query->fetchAll();
         }
-
-        public function addCategory($data){
+		public function addCategory($data){
 			$query = $this->db->prepare("
 				INSERT INTO categories
 					(category_name, category_description, category_image)

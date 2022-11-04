@@ -20,5 +20,5 @@
         header("Location: " . ROOT . "/home" );
 	}
     
-    require("Admin/Views/view-delUpdCategory.php");
+    require("Admin/Views/view-deleteCategory.php");
 ?>

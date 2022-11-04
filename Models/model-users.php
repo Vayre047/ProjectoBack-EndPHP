@@ -118,21 +118,21 @@
 			$query->execute();
 
 			return $query->fetchAll();
-		}
+		} 
 
 		public function deleteAdminUser($data){
 			$query = $this->db->prepare("
 					DELETE 
 					FROM users
-					WHERE user_id = ?
+					WHERE user_id= ?
 				");
-
+			var_dump($data["user_id"]);
 			$query->execute([$data["user_id"]]);
 
 			return $query->fetch();
 		} 
 
-		public function updateAdminUser($data, $user_id ){
+		public function updateAdminUser($data, $user_id){
 			$query = $this->db->prepare("
                 UPDATE users
                 SET user_firstName = ?, user_lastName = ?, user_email = ?, password = ?, user_address = ?, postal_code = ?, city = ?
@@ -144,7 +144,8 @@
             ]);
             
             return $query->fetch();
-		}
+		} 
+
 	}
 
 ?>

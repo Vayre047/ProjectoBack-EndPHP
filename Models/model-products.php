@@ -66,7 +66,6 @@
 
 			return $query->fetchAll();
 		}
-
 		public function addProduct($data){
 			$query = $this->db->prepare("
 				INSERT INTO products

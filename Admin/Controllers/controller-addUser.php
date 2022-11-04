@@ -1,6 +1,6 @@
 <?php
 
-    $title = "Inserir Novo Empregado";
+    $title = "Inserir novo empregado";
 	
 	require("Models/model-users.php");
 

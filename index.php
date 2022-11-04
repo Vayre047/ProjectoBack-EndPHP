@@ -11,7 +11,7 @@
 
     $controllers = [
         "cart", "homepage", "login", "logout", "productdetails", "register", "listproducts", 
-        "season", "category", "removeitem", "paymentmethod", "conta", "admin", "home", "addUser", "addProduct", "addCategory", "delUpdUser", "delUpdProducts", "delUpdCategory"
+        "season", "category", "removeitem", "paymentmethod", "conta", "admin", "home", "addUser", 'addCategory', "addProduct", "delUpdUser", "delUpdProduct", "deleteCategory", "updateUser"
     ];
 
     $controller = $url[1] ?: "homepage";    
@@ -40,15 +40,8 @@
 
     $products = $modelProducts->allProducts();
 
-    require("Models/model-languages.php");
-
-    $modelLanguages = new Languages();
-
-	$languages = $modelLanguages->getAllLanguages($id);
-	
-	require("Views/Layout/footer.php");
-
-    if($url[1] == 'admin' || $url[1] == 'home' || $url[1] == 'addUser' || $url[1] == 'addProduct' || $url[1] == 'addCategory' || $url[1] == 'delUpdUser' || $url[1] == 'delUpdProducts' || $url[1] == 'delUpdCategory'){
+    if($url[1]=='admin' || $url[1]=='home' || $url[1] == 'addUser' || $url[1] == 'addProduct' 
+    || $url[1] == 'addCategory' || $url[1] == 'delUpdUser' || $url[1] == 'delUpdProduct' || $url[1] == 'deleteCategory'|| $url[1] == 'updateUser'){
         require("Admin/Controllers/controller-" . $controller . ".php");
     }else{
         require("Controllers/controller-" . $controller . ".php");

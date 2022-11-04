@@ -31,10 +31,10 @@
                 <a class="text-center removeConfiguration" href="<?php echo ROOT . "/delUpdUser" ?>"> Apagar empregado</a>
             </div>
             <div class="col-sm">
-                <a class="text-center removeConfiguration" href="<?php echo ROOT . "/delUpdProducts" ?>"> Apagar produto </a>
+                <a class="text-center removeConfiguration pt-5" href="<?php echo ROOT . "/delUpdProduct" ?>"> Apagar produto </a>
             </div>
             <div class="col-sm">
-                <a class="text-center removeConfiguration" href="<?php echo ROOT . "/delUpdCategory" ?>"> Apagar categoria </a>
+                <a class="text-center removeConfiguration" href="<?php echo ROOT . "/deleteCategory" ?>"> Apagar categoria </a>
             </div>
         </div>
         <div class="row pt-5">
@@ -42,10 +42,7 @@
                 <a class="text-center removeConfiguration" href="<?php echo ROOT . "/delUpdUser" ?>"> Actualizar empregado</a>
             </div>
             <div class="col-sm">
-                <a class="text-center removeConfiguration" href="<?php echo ROOT . "/delUpdProducts" ?>"> Actualizar produto </a>
-            </div>
-            <div class="col-sm">
-                <a class="text-center removeConfiguration" href="<?php echo ROOT . "/delUpdCategory" ?>"> Actualizar categoria </a>
+                <a class="text-center removeConfiguration" href="<?php echo ROOT . "/delUpdProduct" ?>"> Actualizar produto </a>
             </div>
         </div>
     </div>

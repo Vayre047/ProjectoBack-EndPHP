@@ -1,23 +1,29 @@
 <?php
 
     require("Layout/header.php");
-
+    
 ?>
-    <div>
-        <form action="" method="post">
+    <h1 class="text-center"><?php echo $title; ?></h1>
+    <form method="post" action="<?php echo ROOT;  ?>/login">
+        <div>
             <label>
-                <p>E-mail do Empregado</p>
-                <input type="email" name="employerEmail" placeholder="Coloque o seu e-mail">
+                Email
+                <input type="email" name="email" required>
             </label>
+        </div>
+        <div>
             <label>
-                <p>Password do Empregado</p>
-                <input type="password" name="employerPassword" placeholder="Coloque a sua password">
+                Password
+                <input type="password" name="password" required minlength="8" maxlength="1000">
             </label>
-        </form>
-    </div>
+        </div>
+        <div>
+            <button type="submit" name="send">Entrar</button>
+        </div>
+    </form>
 
 <?php
 
-    require("/Layout/footer.php");
+    require("Layout/footer.php");
 
 ?>

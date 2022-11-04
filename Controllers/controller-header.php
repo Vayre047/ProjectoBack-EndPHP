@@ -22,6 +22,7 @@
 
     $modelUsers = new Users();
 
+    var_dump($_POST["email"]);
     if(isset($_SESSION["user_id"])){
         $user = $modelUsers->getUser($_POST["email"]);
     }
