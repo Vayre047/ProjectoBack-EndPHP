@@ -15,8 +15,15 @@
 </head>
 <body data-root="<?php echo ROOT; ?>">
     <header> 
-        <div class="">
-            <h1 class="pt-1 mainTitle">Farm Shop</h1>
+        <div class="sm-box sm-box--1 pt-3">
+            <?php echo '<a class="ps-5" href="' .ROOT.'/home">
+                <img src="'.URL.'Images/agronomy-icon.png" alt="Homepage">
+            </a>'?>
+        </div>
+        <div class="sm-box sm-box--4">
+            <h1 class="pt-1 mainTitle">Horizon Farm</h1>
+        </div>
+        <div>
             <p class="pt-4 mainTitle h2">Administrative Area</p>
         </div>
     </header>

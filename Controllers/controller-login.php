@@ -18,13 +18,12 @@
                     $_SESSION["user_id"] = $user;
     
                     header("Location: " . ROOT . "/");
-                    //var_dump($_SESSION["user_id"]);
                     exit;
                 }
         
             }
 
-            $message = "Dados incorretos, confirme preenchimento do email ou password";
+            $message = "Email ou password erradas";
             
     }
 

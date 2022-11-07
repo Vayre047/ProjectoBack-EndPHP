@@ -49,7 +49,7 @@
 			</div>
 
 				<div class="text-center">
-					<a class="removeConfiguration btn btn-success" href="<?php echo ROOT . "/paymentmethod" ?>">Avançar para pagamento</a>
+					<a class="removeConfiguration btn btn-success" href="<?php echo ROOT . "/paymentmethod" ?>">Pagamento</a>
 				</div>
 			<?php 
 		}

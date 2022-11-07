@@ -15,11 +15,11 @@
     $updatedOrders = new Orders();
     $updatedProducts = new Products();
 
-    $orderIdentification = $modelOrders->create($_SESSION["user_id"]);
+    $orderIdentification = $updatedOrders->createOrders($_SESSION["user_id"]);
 
     foreach($_SESSION["cart"] as $productItem){
-        $productItem["order_id"] = $order_id;
-        $updatedOrders->createDetail($productItem);
+        $productItem["order_id"] = $orderIdentification;
+        $updatedOrders->createOrderDetail($productItem);
 
         $updatedProducts->updateStock($productItem["product_id"], $productItem["quantity"]);
     }
@@ -29,5 +29,5 @@
     $title = "Pagamento";
     $paymentMethod = mt_rand(10000000, 999999999);
 
-    require("Views/view-checkout.php");
+    require("Views/view-paymentmethod.php");
 ?>

@@ -13,11 +13,11 @@
 			");
 
 			$query->execute([
-				$data["firstName"],
-				$data["lastName"],
-				$data["email"],
+				$data["user_firstName"],
+				$data["user_lastName"],
+				$data["user_email"],
 				password_hash($data["password"], PASSWORD_DEFAULT),
-				$data["address"],
+				$data["user_address"],
 				$data["postal_code"],
 				$data["city"]
 			]);
@@ -112,12 +112,24 @@
 			$query = $this->db->prepare("
 					SELECT user_id, user_firstName, user_lastName
 					FROM users
-					WHERE admin = 1
+					WHERE admin=1
 				");
 
 			$query->execute();
 
 			return $query->fetchAll();
+		} 
+
+		public function getUserData($data){
+			$query = $this->db->prepare("
+					SELECT user_id, user_firstName, user_lastName, user_email, user_address, postal_code, city
+					FROM users
+					WHERE user_id = ?
+				");
+
+			$query->execute([$data]);
+
+			return $query->fetch();
 		} 
 
 		public function deleteAdminUser($data){

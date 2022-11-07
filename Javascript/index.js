@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateUser = document.getElementsByClassName("updateUser");
     const modalForm = document.getElementById("modalLoginForm");
     const removeBtn = document.querySelectorAll(".removeBtn");
-    const uptadeUser = document.getElementById("formUpdateUser");
+    const formUpdateUser = document.getElementById("formUpdateUser");
 
     for (const button of addCartModalButtons) {
         button.addEventListener("click", () => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for(const button of updateUser) {
         button.addEventListener("click", () => {
-            const inputUserId = uptadeUser.querySelector('[name="user_id"]');
+            const inputUserId = formUpdateUser.querySelector('[name="user_id"]');
 
             inputUserId.value = button.dataset.user_id;
         });

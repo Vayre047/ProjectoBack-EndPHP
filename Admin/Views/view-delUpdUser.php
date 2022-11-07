@@ -27,11 +27,13 @@
         </div>
         <div class="col col-sm">
             <h1 class="mainTitle pt-3"><?php echo $titleSecondary; ?></h1>
+
             <div class="pt-3">
                     <?php
                         foreach($users as $user){
                     ?>
-                        <a href="<?php echo ROOT . "/updateUser" ?>" class="btn btn-success btn-rounded mb-2 updateUser" data-user_id="<?php echo $user["user_id"] ?>"><?php echo $user["user_firstName"] .' '.$user["user_lastName"] ?></a>
+                        <a href="<?php echo ROOT . '/updateUser/' . $user["user_id"]; ?>" class="btn btn-success btn-rounded mb-2 updateUser" 
+                        data-user_id="<?php echo $user["user_id"] ?>"><?php echo $user["user_firstName"] .' '.$user["user_lastName"] ?></a>
                      <?php
                         }
                     ?>

@@ -97,7 +97,23 @@
 			$query->execute([$data["product_id"]]);
 
 			return $query->fetch();
-		} 
+		}
+		
+		public function updateStock($product_id, $quantity){
+			$query = $this->db->prepare("
+				UPDATE products
+				SET	stock = ?
+				WHERE product_id = ?
+			");
+
+			$query->execute([
+				$product_id,
+				$quantity
+			]);
+	
+			return $query->fetch();
+		}
+
     }
 
 ?>
