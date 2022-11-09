@@ -20,5 +20,5 @@
         header("Location: " . ROOT . "/home" );
 	}
     
-    require("Admin/Views/view-delUpdProducts.php");
+    require("Admin/Views/view-delUpdProduct.php");
 ?>

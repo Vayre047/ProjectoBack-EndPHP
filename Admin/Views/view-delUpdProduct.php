@@ -6,7 +6,7 @@
 
 <p class="text-center h3 pt-2 mainTitle"><?php echo $title; ?></p>
 <div>
-	<form class="text-center pt-5" method="post" action="<?php echo ROOT;?>/delUpdProducts">
+	<form class="text-center pt-5" method="post" action="<?php echo ROOT;?>/delUpdProduct">
         <div class="pt-3 formInputs">
             <select id="product_id" name="product_id" >
                 <?php

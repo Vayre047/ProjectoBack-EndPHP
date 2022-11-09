@@ -26,4 +26,13 @@
         <div>
             <p class="pt-4 mainTitle h2">Administrative Area</p>
         </div>
+        <?php
+            if(!isset($_SESSION["user_id"])){
+             ?>
+        <div class="pt-2 sm-box ">
+                    <?php echo '<a href="'.ROOT.'/logout"> Sair </a>'; ?>
+                </div>
+                <?php
+            }
+            ?>
     </header>
